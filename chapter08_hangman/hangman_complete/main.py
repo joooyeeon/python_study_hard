@@ -8,5 +8,5 @@ from hangman09 import play_hangman2
 #play_hangman2() 정의
 #main.py 파일에서ㅏ
 play_hangman2()
-#가 실행하도록 하소
+#가 실행되도록 하소
 
