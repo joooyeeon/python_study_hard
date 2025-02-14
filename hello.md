@@ -33,5 +33,5 @@ github에 다시 추가된 파일 / 코드를 올리는데
 명령어를 소개합니다.
 
 git add .
-git commit -m "feat:20250212 hello.md uploaded"
+git commit -m "feat:20250212 class lesson"
 git push
