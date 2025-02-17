@@ -39,7 +39,7 @@ class 클래스명:
     self.color = color
 '''
 
-# class Candy2():
+# class Candy2:
 #     #생성자 정의
 #     def __init__(self,shape,color):
 #         self.shape=shape
@@ -47,8 +47,8 @@ class 클래스명:
 #     def display_info(self):
 #         print(f"사탕의 모양은 {self.shape}이고 색깔은 {self.color}입니다.")
 #
-#     satang2=Candy2("정육면체","흰색") # 이부분에서 차이가 발견됩니다.
-#     satang2.display_info()
+# satang2=Candy2("정육면체","흰색") # 이부분에서 차이가 발견됩니다.
+# satang2.display_info()
 '''
     이상에서 주목해야 할 점은 satang 인스턴스의 satang2 인스턴스의 생성 방식의 차이입니다.
     
@@ -142,19 +142,19 @@ del man
 4. 인스턴스가 삭제되면 다음과 같은 메세지를 출력할 수 있도ㅠ록 작성핫오
 james is dead.
 '''
-class Person():
-     def __init__(self,name):
-         self.name=name
-         print(f"{self.name} is born")
-
-
-     def __del__(self):
-         print(f"{self.name} is dead.")
-
-man=Person("James")
-woman=Person("emily")
-del man
-print("프로그램이 종료됨.")
+# class Person():
+#      def __init__(self,name):
+#          self.name=name
+#          print(f"{self.name} is born")
+#
+#
+#      def __del__(self):
+#          print(f"{self.name} is dead.")
+#
+# man=Person("James")
+# woman=Person("emily")
+# del man
+# print("프로그램이 종료됨.")
 
 '''
 예제 1.
@@ -174,7 +174,7 @@ print("프로그램이 종료됨.")
     student3=student("박민지",20250003,"C")
     실행 예
     
-    학생 아름: 김펄수
+    학생 이름: 김철수
     학번 : 20250001
     성젃 : A
     
@@ -184,14 +184,126 @@ print("프로그램이 종료됨.")
     다시 print_profile을 적용하여 출력하삼
 '''
 
-class Student():
-    def __init__(self,name,student_id,grade):
-        self.name=name
-        self.student_id=student_id
-        self.grade=grade
-    def print_grade(self,student):
-        self.student=student
+# class Student():
+#     def __init__(self,name,student_id,grade):
+#         self.name=name
+#         self.student_id=student_id
+#         self.grade=grade
+#     def print_profile(self):                #잠재적인 문제점: 모든 속성을 전부 확인해야하 한다는 점
+#         print(f"학생이름:{self.name}")       #콘솔에 찍히는 call1()-> 수학적인 연산이 불가능하다는 점
+#         print(f"학번:{self.student_id}")
+#         print(f"학점:{self.grade}")
+#
+#     # 이상의 코드는 console에 찍히기만 할 뿐 연산이 불가능하기 때문에 getter는 call1() 유형으로 작성하기 보다는
+#     # call3() 매개변수 X/ 리턴 O형태로
+#     #grade만 바꾸게 될 메서드 -> set_info():Book 클래스의 set_info()메서드를 참조하시면 됩니다.
+#     #setter 정의
+#     def set_grade(self,grade):
+#         if grade not in["A+","A","B+","B","C+","C","D+","D","F"]:
+#             print(f"{grade}는 불가능한 점수 입력입니다.")
+#             return
+#
+#         self.grade=grade               #Book 클래스에서 set_info(self,title,author):
 
-student1=student("김철수",20250001,"A")
-student2=student("이영희",20250002,"B")
-student3=student("박민지",20250003,"C")
+    #객체 생성
+
+
+
+#인스턴스 메서드를 호출
+# student1.print_profile()
+#
+# #속성값을 직접 참조해서 바꾸는 방법
+# student1.grade="A+"
+#
+# student1.print_profile()
+# student1.grade="말도 안되는 값도 일단 가능"
+# print(student1.get_grade())
+# student1.set_grade("A+")
+#
+# student1.print_profile()
+# student1.grade="안되는 값"
+# student1.print_profile()
+
+#이상을 이유로 인스턴스 변수에 값을 대입할 떄 제약을 걸기 위해 method를 경유하여 값을 대입하도록
+#권장함 -> setter(call2()유형)/getter(call3()유형)라는 개념->클래스로 돌아가서 해당 메서드를 추가함.
+
+#지시사항 (4)
+#객체 생성
+# student1=Student("김철수",20250001,"A")
+# student2=Student("이영희",20250002,"B")
+# student3=Student("박민지",20250003,"C")
+#
+# student1.set_grade("A+")
+# student2.set_grade("A")
+# student3.set_grade("B+")
+#
+# student1.print_profile()
+# student2.print_profile()
+# student3.print_profile()
+
+
+'''
+1. Setter/Getter란?
+    1) Setter: 객체의 속성 값(인스턴스 변수)을 변경하는 메서드
+    2) Getter: 객체의 속성 값(인스턴스 변수)을 조회하는 메서드
+    3) 왜 Setter/Getter를 사용하는가?
+        (1) 데이터 보호 및 무결성 유지
+            : 속성 값을 직접 변경하는 경우, 잘못된 값이 입력될 가능성이 높음
+            : setter을 사용하면 특정 조건을 만족하는 값만 속성에 대입가능
+        (2) 객체의 캡슐화(Encapsulation) 실현
+            : 객체의 내부 데이터를 외부에서 직접 수정하는 것을 방지
+            : 대신 메서드를 통해서만 접근하도록 제한하여 보안성을 높임
+        (3) 추후 유지 보수 및 확장성 용이
+            : Setter / Getter 를 사용하면 특정 속성에 대한 로직을 쉽게 변경 가능(if절 바꾸는 거 생각하시면 됩니다.)
+            : 예를 들어, 특정 속성을 설정할 떄 추가적인 검증이 필요하면  Setter 에서 처리가능
+2. 이제 클래스를 정의할 때 기본적으로 Setter/Getter 를 타이핑하면서 형태를 배울 예정
+    1)Setter: call2()유형 -> 매개변수 있고 리턴 없음
+    2)Getter: call3()유형 -> 매개변수 없고 리턴 있음 
+'''
+
+#Setter/Getter 적용된 클래스 정의 예시
+class Person:
+    #생성자 정의
+    def __init__(self,name,age,address):
+        self.name=name
+        self.age=age
+        self.address=address
+
+    #setter 정의
+    def set_name(self,name):
+        self.name=name
+
+    #getter 정의 예시
+    def get_name(self):
+        return self.name
+    #set_age / set_address 를 정의하는데, set_age의 경우 0미만 및 200초과는 입력 불가능하겍
+    # 로직을 작성하시오,
+    #get_age/get_address를 정의하삼
+    def set_age(self,age):
+        if age<0 or age>200:
+            print("입력 불가능합니다.")
+            return
+        else:
+            self.age=age
+    def set_address(self,address):
+        self.address=address
+
+    def get_age(self):
+        return self.age
+
+    def get_address(self):
+        return self.address
+
+    #객체 생성
+person=Person("안근수",38,"연제구")
+
+print(f"제 이름은 {person.get_name()}입니다.")
+print(f"제 나이는 {person.get_age()}인데 만으로는 {person.get_age()-2}살입니다.")
+print(f"현재  {person.get_address()}에 살고 잇숩니도.")
+
+    #불가능한 나이 입력
+person.set_age(-30)
+'''
+
+
+'''

@@ -23,6 +23,14 @@ MENU ={
         "가격":3.0,
     }
 }
+
+profit = 0
+resources = {
+    "물":300,
+    "우유":200,
+    "커피":100,
+}
+
 # print(MENU)
 # print(MENU["라떼"]["재료"]["우유"])
 # 카푸치노의 가격을 콘솔에 출력하시오
@@ -31,12 +39,6 @@ MENU ={
 # print(MENU["카푸치노"]["가격"])
 # print(MENU["에스프레소"]["재료"]["물"])
 
-profit = 0
-resources = {
-    "물":300,
-    "우유":200,
-    "커피":100,
-}
 # resources에서 에스프레소 두 잔을 뽑았을 때ㅡ 남는 물, 우유, 커피 양을 계산하고 그 결과를 콘솔에 출력하시오
 
 
@@ -51,5 +53,12 @@ resources = {
 
 #이상을 진행했을 때 커피 두 잔이 자판기에서ㅏ 나왔기 때문에 자판기에는 돈이 들어가잇겟죵
 #자판기 profit 변수에 적절한 가격을 대입하시오,
-profit+= MENU["에스프레소"]["가격"] * 2
-print(profit)
+# profit+= MENU["에스프레소"]["가격"] * 2
+# print(profit)
+choice=input("어떤 음료를 드시겠습니까? 에스프레소/라떼/카퓌치노 >>>")
+#off 라고 입력되면 종료될 것
+#report 라고 입력되면 resources와 profit를 참조하여 manual과 같은 방식으로 콘솔에 출력할것
+#잘못 입력했을 경우 잘못 입력하셨습니다라는 안내문이 출력될것
+while not finish :
+if choice=="report"
+    finish=True

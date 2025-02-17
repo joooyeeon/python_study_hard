@@ -1,10 +1,16 @@
-# input(" dddd >>>") 이거 왜한느거으가
-#
-# if 맞푸명 def
-#      else: 안맞힌 def 틀리면 기회 -1
-# input 포함 무한반ㅂ고
-# from chapter08_hangman.hangman01 import chosen_word
-numbers = [1, 2, 3, 4, 5]
-print(numbers)
-numbers[0] = 100
-print(numbers)
+class Candy2:
+     #생성자 정의
+     def __init__(self,shape,color):
+         self.shape=shape
+         self.color=color
+     def display_info(self):
+         print(f"사탕의 모양은 {self.shape}이고 색깔은 {self.color}입니다.")
+
+satang2 = Candy2("정육면체","흰색")
+satang2.display_info()
+
+'''
+동전 입력 50* 갯수 해서 다더하고 가격 빼기
+if 우유나 모든 재료<= 선책한 음료 ㄷ재룔여ㅑㅇ
+'''
+
