@@ -35,3 +35,6 @@ github에 다시 추가된 파일 / 코드를 올리는데
 git add .
 git commit -m "feat:20250212 class lesson"
 git push
+-> 여러분이 내일 준비할것
+menu, coffee_maker, money_machinde세개의 파이썬 모듈(파일)확ㅇ니하시소 엌떻게 잘 조립해서
+main에 작성하면 커피머신이 완성될지 고민해보도록 허ㅏ겠습니다.
