@@ -82,7 +82,7 @@ try / except 문을 사용하여 "예외가 발생하였습니다."를 출력할
 '''
 # try:
 #     height = input("키를 입력하세요 >>> ")     # 결과값이 str
-#     height = round(height)                  # str을 round처리할 수가 없기 때문에 예외 발생
+#     height = round(height)                  # str을 round 처리할 수가 없기 때문에 예외 발생
 #     print(f"입력하신 키는 {height}cm로 처리됩니다.")
 # except:
 #     print("예외가 발생하였습니다.")
